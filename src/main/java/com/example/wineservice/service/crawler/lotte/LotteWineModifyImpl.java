@@ -1,6 +1,6 @@
-package com.example.winesearchservice.service.crawler.lotte;
+package com.example.wineservice.service.crawler.lotte;
 
-import com.example.winesearchservice.repository.WineRepository;
+import com.example.wineservice.repository.WineRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.openqa.selenium.WebElement;

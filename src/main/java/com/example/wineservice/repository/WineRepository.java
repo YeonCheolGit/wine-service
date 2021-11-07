@@ -1,6 +1,6 @@
-package com.example.winesearchservice.repository;
+package com.example.wineservice.repository;
 
-import com.example.winesearchservice.entity.Wine;
+import com.example.wineservice.entity.Wine;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;

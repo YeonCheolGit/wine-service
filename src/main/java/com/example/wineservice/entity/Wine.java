@@ -1,4 +1,4 @@
-package com.example.winesearchservice.entity;
+package com.example.wineservice.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

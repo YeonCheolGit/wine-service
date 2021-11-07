@@ -1,4 +1,4 @@
-package com.example.winesearchservice.service.crawler.lotte;
+package com.example.wineservice.service.crawler.lotte;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
