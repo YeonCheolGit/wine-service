@@ -1,4 +1,4 @@
-package com.example.winesearchservice.service;
+package com.example.wineservice.service;
 
 import org.springframework.beans.factory.annotation.Value;
 

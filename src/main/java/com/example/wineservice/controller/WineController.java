@@ -1,11 +1,9 @@
-package com.example.winesearchservice.controller;
+package com.example.wineservice.controller;
 
-import com.example.winesearchservice.service.crawler.lotte.LotteWineCrawler;
+import com.example.wineservice.service.crawler.lotte.LotteWineCrawler;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.concurrent.ExecutionException;
 
 @RestController
 @RequiredArgsConstructor

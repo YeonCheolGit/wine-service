@@ -1,4 +1,4 @@
-package com.example.winesearchservice.service.crawler.lotte;
+package com.example.wineservice.service.crawler.lotte;
 
 import org.openqa.selenium.WebElement;
 

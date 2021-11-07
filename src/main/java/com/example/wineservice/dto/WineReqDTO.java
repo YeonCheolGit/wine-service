@@ -1,4 +1,4 @@
-package com.example.winesearchservice.dto;
+package com.example.wineservice.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
