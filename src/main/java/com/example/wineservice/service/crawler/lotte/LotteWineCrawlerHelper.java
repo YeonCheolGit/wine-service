@@ -1,5 +1,6 @@
 package com.example.wineservice.service.crawler.lotte;
 
+import com.example.wineservice.repository.WineRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.openqa.selenium.WebElement;
@@ -16,13 +17,14 @@ import java.util.concurrent.ExecutionException;
 @Slf4j
 @Service
 public class LotteWineCrawlerHelper {
-    private final LotteWineModifyImpl lotteWineModifyImpl;
+    private final LotteWineModify lotteWineModify;
+    private final WineRepository wineRepository;
 
     @Transactional
     public void trimAndAddWines(List<WebElement> names, List<WebElement> prices) {
         log.info("[ trimAndAddWines() ] - start");
-        CompletableFuture<List<String>> nameList = lotteWineModifyImpl.wineNameList(names);
-        CompletableFuture<List<Integer>> priceList = lotteWineModifyImpl.winePriceList(prices);
+        CompletableFuture<List<String>> nameList = lotteWineModify.wineNameList(names);
+        CompletableFuture<List<Integer>> priceList = lotteWineModify.winePriceList(prices);
 
         try {
             CompletableFuture.allOf(nameList, priceList).get();
@@ -44,6 +46,16 @@ public class LotteWineCrawlerHelper {
             Thread.currentThread().interrupt();
         }
 
-        lotteWineModifyImpl.saveNameAndPriceList(savedNameList, savedPriceList);
+        saveNameAndPriceList(savedNameList, savedPriceList);
+    }
+
+    @Transactional
+    public void saveNameAndPriceList(List<String> nameList, List<Integer> priceList) {
+        log.info("[ saveNameAndPriceList() ] - start");
+        int nameListSize = nameList.size();
+
+        for (int i = 0; i < nameListSize; i++) {
+            wineRepository.saveWineNameAndPrice(nameList.get(i), priceList.get(i));
+        }
     }
 }

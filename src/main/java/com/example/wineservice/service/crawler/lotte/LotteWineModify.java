@@ -18,8 +18,6 @@ import java.util.concurrent.CompletableFuture;
 @Service
 public class LotteWineModify {
 
-    private final WineRepository wineRepository;
-
     @Async
     public CompletableFuture<List<String>> wineNameList(List<WebElement> names) {
         log.info("[ wineNameList() ] - start");
@@ -47,13 +45,4 @@ public class LotteWineModify {
         return CompletableFuture.completedFuture(priceList);
     }
 
-    @Transactional
-    public void saveNameAndPriceList(List<String> nameList, List<Integer> priceList) {
-        log.info("[ saveNameAndPriceList() ] - start");
-        int nameListSize = nameList.size();
-
-        for (int i = 0; i < nameListSize; i++) {
-            wineRepository.saveWineNameAndPrice(nameList.get(i), priceList.get(i));
-        }
-    }
 }
