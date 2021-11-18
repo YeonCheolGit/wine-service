@@ -33,8 +33,9 @@ public class LotteWineCrawler extends CommonService {
         while (page < 5) { // 총 와인 페이지
             try {
                 log.info("롯데마트 " + page + "페이지 넘어왔습니다.");
-                wineNamesElement = webDriver.findElements(By.xpath(wineName)); // 와인 이름
-                winePricesElement = webDriver.findElements(By.xpath(winePrice)); // 와인 가격
+                wineNamesElement = webDriver.findElements(By.xpath(wineNameXpath)); // 와인 이름
+                winePricesElement = webDriver.findElements(By.xpath(winePriceXpath)); // 와인 가격
+                winePricesElement = webDriver.findElements(By.xpath(winePriceXpath)); // 와인 가격
 
                 lotteWineCrawlerHelper.trimAndAddWines(wineNamesElement, winePricesElement);
 

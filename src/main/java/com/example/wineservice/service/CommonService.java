@@ -7,7 +7,8 @@ public class CommonService {
     @Value("${baseUrl}")
     public String baseUrl;
     @Value("${wineName}")
-    public String wineName;
+    public String wineNameXpath;
     @Value("${winePrice}")
-    public String winePrice;
+    public String winePriceXpath;
+
 }
