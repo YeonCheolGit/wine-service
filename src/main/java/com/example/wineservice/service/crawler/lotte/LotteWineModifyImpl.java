@@ -16,12 +16,11 @@ import java.util.concurrent.CompletableFuture;
 @RequiredArgsConstructor
 @Slf4j
 @Service
-public class LotteWineModifyImpl implements LotteWineModify {
+public class LotteWineModifyImpl {
 
     private final WineRepository wineRepository;
 
     @Async
-    @Override
     public CompletableFuture<List<String>> wineNameList(List<WebElement> names) {
         log.info("[ wineNameList() ] - start");
 
@@ -34,7 +33,6 @@ public class LotteWineModifyImpl implements LotteWineModify {
     }
 
     @Async
-    @Override
     public CompletableFuture<List<Integer>> winePriceList(List<WebElement> prices) {
         log.info("[ winePriceList() ] - start");
 
