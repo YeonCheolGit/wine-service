@@ -16,7 +16,7 @@ import java.util.concurrent.CompletableFuture;
 @RequiredArgsConstructor
 @Slf4j
 @Service
-public class LotteWineModifyImpl {
+public class LotteWineModify {
 
     private final WineRepository wineRepository;
 
